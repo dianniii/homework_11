@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <title>ToDo List</title>
+</head>
+<body>
+    <main class="container">
+        <h1 class="title">ToDo List</h1>
+        <div class="input-button-container">
+            <ul id="list">
+                <input id="input" type="text" value="" placeholder="Введите задачу">
+            </ul>
+        <div>
+            <button onclick="getElement()" id="button">Добавить</button>
+        </div>
+        </div>
+    </main>
+    <script>
+        //найдем все элементы, что понадабятся
+        const list = document.getElementById('list');
+        const input = document.getElementById('input');
+        const button = document.getElementById('button');
+
+        //функция нажатия на кнопку и добавлениеи новой задачи
+        function getElement (){
+            const taskText = input.value.trim();
+            const newItemList = document.createElement('li');
+            newItemList.textContent = taskText;
+            input.value = '';
+            list.append(newItemList);
+        }
+        //функция добавления нового класса чтоб выполнить задачу
+        list.addEventListener ('click', function(evt) {
+            if (evt.target.tagName =='LI') {
+                evt.target.classList.toggle('completed-task');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+.container{
+    display: grid;
+    grid-template-columns: min-content min-content;
+    justify-content: center;
+}
+.title{
+    grid-column: 1/3;
+    text-align: center;
+}
+.input-button-container{
+    display: flex;
+    gap: 10px;
+}
+ul{
+    list-style-type: none;
+}
+#button{
+    height: 30px;
+    margin: 14px;
+    background-color: rgb(32, 110, 32);
+    color: white;
+    font-size: 18px;
+    border: none;
+    width: 110px;
+}
+#input{
+    width: 250px;
+    height: 20px;
+}
+/* изменение бордера импута на синий */
+#input:focus{
+    outline: none;
+    border: 2px solid rgb(28, 149, 230);
+}
+/* класс добавленных задач */
+li { 
+    margin-top: 10px; 
+    text-align: center; 
+    width: 250px; /* Установите фиксированную ширину, равную ширине поля ввода */
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+/* добавленный класс через функцию */
+.completed-task{
+    text-decoration: line-through;
+    color: gray;
+}
